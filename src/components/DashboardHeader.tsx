@@ -1,36 +1,30 @@
-import { Button } from "@/components/ui/button";
-import { Calendar, Filter } from "lucide-react";
+import { Activity, Building2 } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const DashboardHeader = () => {
   return (
     <div className="bg-card border-b border-border p-4">
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center gap-4">
-          <h1 className="text-xl font-semibold text-foreground">
-            Painel Gerencial | Atendimento
-          </h1>
-        </div>
-        <div className="text-sm text-muted-foreground font-medium">
-          TOTVS
-        </div>
-      </div>
-      
-      <div className="flex items-center gap-4 flex-wrap">
-        <div className="flex items-center gap-2">
-          <Calendar className="h-4 w-4 text-muted-foreground" />
-          <span className="text-sm text-foreground font-medium">21 Set 2023</span>
-          <span className="text-muted-foreground">-</span>
-          <span className="text-sm text-foreground font-medium">21 Set 2023 - 29 Set</span>
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
+            <div className="p-2 bg-primary/10 rounded-lg">
+              <Activity className="h-6 w-6 text-primary" />
+            </div>
+            <div>
+              <h1 className="text-xl font-semibold text-foreground">
+                Painel Gerencial
+              </h1>
+              <p className="text-sm text-muted-foreground">Atendimento Externo</p>
+            </div>
+          </div>
         </div>
         
-        <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm">
-            <Filter className="h-4 w-4 mr-2" />
-            Emergências
-          </Button>
-          <Button variant="default" size="sm">
-            Todos
-          </Button>
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <Building2 className="h-4 w-4" />
+            <span className="font-medium">TOTVS Healthcare</span>
+          </div>
+          <ThemeToggle />
         </div>
       </div>
     </div>
