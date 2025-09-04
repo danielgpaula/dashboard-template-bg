@@ -14,8 +14,10 @@ export default defineConfig(({ mode }) => ({
     react(),
     mode === 'development' &&
     componentTagger(),
+    // Only copy data files if the data directory exists
     viteStaticCopy({
       targets: [{ src: 'data/**/*', dest: 'data' }],
+      silent: true,
     }),
   ].filter(Boolean),
   resolve: {
